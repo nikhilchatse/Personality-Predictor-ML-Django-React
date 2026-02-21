@@ -1,0 +1,61 @@
+export const questions = [
+  // --- EXTRAVERSION (1-10) ---
+  { id: 1, text: "I am the life of the party.", trait: "EXT" },
+  { id: 2, text: "I don't talk a lot.", trait: "EXT" },
+  { id: 3, text: "I feel comfortable around people.", trait: "EXT" },
+  { id: 4, text: "I keep in the background.", trait: "EXT" },
+  { id: 5, text: "I start conversations.", trait: "EXT" },
+  { id: 6, text: "I have little to say.", trait: "EXT" },
+  { id: 7, text: "I talk to a lot of different people at parties.", trait: "EXT" },
+  { id: 8, text: "I don't like to draw attention to myself.", trait: "EXT" },
+  { id: 9, text: "I don't mind being the center of attention.", trait: "EXT" },
+  { id: 10, text: "I am quiet around strangers.", trait: "EXT" },
+
+  // --- NEUROTICISM (11-20) ---
+  { id: 11, text: "I get stressed out easily.", trait: "EST" },
+  { id: 12, text: "I am relaxed most of the time.", trait: "EST" },
+  { id: 13, text: "I worry about things.", trait: "EST" },
+  { id: 14, text: "I seldom feel blue.", trait: "EST" },
+  { id: 15, text: "I am easily disturbed.", trait: "EST" },
+  { id: 16, text: "I get upset easily.", trait: "EST" },
+  { id: 17, text: "I change my mood a lot.", trait: "EST" },
+  { id: 18, text: "I have frequent mood swings.", trait: "EST" },
+  { id: 19, text: "I get irritated easily.", trait: "EST" },
+  { id: 20, text: "I often feel blue.", trait: "EST" },
+
+  // --- AGREEABLENESS (21-30) ---
+  { id: 21, text: "I feel little concern for others.", trait: "AGR" },
+  { id: 22, text: "I am interested in people.", trait: "AGR" },
+  { id: 23, text: "I insult people.", trait: "AGR" },
+  { id: 24, text: "I sympathize with others' feelings.", trait: "AGR" },
+  { id: 25, text: "I am not interested in other people's problems.", trait: "AGR" },
+  { id: 26, text: "I have a soft heart.", trait: "AGR" },
+  { id: 27, text: "I am not really interested in others.", trait: "AGR" },
+  { id: 28, text: "I take time out for others.", trait: "AGR" },
+  { id: 29, text: "I feel others' emotions.", trait: "AGR" },
+  { id: 30, text: "I make people feel at ease.", trait: "AGR" },
+
+  // --- CONSCIENTIOUSNESS (31-40) ---
+  { id: 31, text: "I am always prepared.", trait: "CSN" },
+  { id: 32, text: "I leave my belongings around.", trait: "CSN" },
+  { id: 33, text: "I pay attention to details.", trait: "CSN" },
+  { id: 34, text: "I make a mess of things.", trait: "CSN" },
+  { id: 35, text: "I get chores done right away.", trait: "CSN" },
+  { id: 36, text: "I often forget to put things back in their proper place.", trait: "CSN" },
+  { id: 37, text: "I like order.", trait: "CSN" },
+  { id: 38, text: "I shirk my duties.", trait: "CSN" },
+  { id: 39, text: "I follow a schedule.", trait: "CSN" },
+  { id: 40, text: "I am exacting in my work.", trait: "CSN" },
+
+  // --- OPENNESS (41-50) ---
+  { id: 41, text: "I have a rich vocabulary.", trait: "OPN" },
+  { id: 42, text: "I have difficulty understanding abstract ideas.", trait: "OPN" },
+  { id: 43, text: "I have a vivid imagination.", trait: "OPN" },
+  { id: 44, text: "I am not interested in abstract ideas.", trait: "OPN" },
+  { id: 45, text: "I have excellent ideas.", trait: "OPN" },
+  { id: 46, text: "I do not have a good imagination.", trait: "OPN" },
+  { id: 47, text: "I am quick to understand things.", trait: "OPN" },
+  { id: 48, text: "I use difficult words.", trait: "OPN" },
+  { id: 49, text: "I spend time reflecting on things.", trait: "OPN" },
+  { id: 50, text: "I am full of ideas.", trait: "OPN" },
+];

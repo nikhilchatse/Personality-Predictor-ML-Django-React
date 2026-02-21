@@ -1,0 +1,12 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Ignore large datasets
+ml_brain/*.csv
+data-final.csv
+
+# Ignore Node modules (React dependencies)
+frontend/node_modules/
