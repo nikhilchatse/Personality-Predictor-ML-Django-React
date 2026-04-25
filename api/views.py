@@ -10,33 +10,49 @@ import os
 
 # 1. Load the Model (The Brain)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_PATH = os.path.join(BASE_DIR, 'ml_brain', 'personality_model.pkl')
+ML_FOLDER = os.path.join(BASE_DIR, 'ml_brain')
 
 try:
-    model = joblib.load(MODEL_PATH)
-    print("Model loaded successfully!")
+    teen_model = joblib.load(os.path.join(ML_FOLDER, 'teen_model.pkl'))
+    youth_model = joblib.load(os.path.join(ML_FOLDER, 'youth_model.pkl'))
+    adult_model = joblib.load(os.path.join(ML_FOLDER, 'adult_model.pkl'))
+    print("All 3 Age-Specific Models loaded successfully!")
+
 except Exception as e:
-    print(f"Error loading model: {e}")
-    model = None
+    print(f"Error loading models: {e}")
+    teen_model, youth_model, adult_model = None, None, None
 
 @api_view(['POST'])
 def predict_personality(request):
     """
     Takes 50 answers (1-5 scale), calculates dominant trait, predicts cluster, and saves result.
     """
-    if model is None:
-        return Response({'error': 'Model not found'}, status=500)
+    # if model is None:
+    #     return Response({'error': 'Model not found'}, status=500)
 
     data = request.data
     answers = data.get('answers') 
     
-   
+    # NEW: Get the age group from the React frontend (default to 'youth' if missing)
+    age_group = data.get('age_group', 'youth')
+
     if not answers or len(answers) != 50 or None in answers:
         return Response({'error': 'Please provide exactly 50 valid answers.'}, status=400)
 
+    active_model = None
+    if age_group == 'teen':
+        active_model = teen_model
+    elif age_group == 'adult':
+        active_model = adult_model
+    else:
+        active_model = youth_model
+
+    if active_model is None:
+        return Response({'error': f'{age_group} Model not found on server'}, status=500)
+    
     # 1. Run the ML Prediction 
     # (We keep this so the Machine Learning aspect of your project remains intact)
-    prediction = model.predict([answers])[0]
+    prediction = active_model.predict([answers])[0]
 
     # 2. Calculate Exact OCEAN Scores
     ext_score = sum(answers[0:10]) / 10
