@@ -17,7 +17,7 @@ A Full-Stack Web Application that predicts human personality traits based on the
 * **Database:** SQLite (Development)
 
 ## ⚙️ How to Run Locally
-1. **Clone the repository:** `git clone <your-github-repo-url>`
+1. **Clone the repository:** `https://github.com/nikhilchatse/Personality-Predictor-ML-Django-React`
 2. **Start Backend:**
    ```bash
    cd backend
